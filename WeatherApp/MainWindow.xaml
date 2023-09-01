@@ -1,0 +1,29 @@
+﻿<Window x:Class="WeatherApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp"
+        mc:Ignorable="d"
+        Title="WeatherApp" Height="450" Width="800" ResizeMode="NoResize" Icon="/nuageux (1).png">
+
+    <DockPanel LastChildFill="False">
+        <StackPanel DockPanel.Dock="Left" Width="180">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF1A75DA"/>
+                    <GradientStop Color="#FF0F355F" Offset="0.914"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="nuageux (1).png" Width="45" Margin="5,0,-1,0"/>
+                <Label Foreground="White" Content="WEATHER" FontSize="25" VerticalAlignment="Center" FontWeight="Bold" Margin="5"></Label>
+
+            </StackPanel>
+            <Label Foreground="White" Content="Enter a city" FontSize="16" VerticalAlignment="Center" Margin="0,5" HorizontalAlignment="Center"></Label>
+            <TextBox Margin="5" Height="25" Name="cityTxt"/>
+            <Button Margin="5" Height="25" Name="btnSearch" Click="btnSearch_Click">SEARCH</Button>
+        </StackPanel>
+    </DockPanel>
+</Window>
