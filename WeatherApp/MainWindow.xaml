@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeatherApp"
         mc:Ignorable="d"
-        Title="WeatherApp" Height="450" Width="800" ResizeMode="NoResize" Icon="/nuageux (1).png">
+        Title="WeatherApp" Height="450" Width="800" ResizeMode="NoResize" Icon="/iconWeather.png">
 
     <DockPanel LastChildFill="False">
         <StackPanel DockPanel.Dock="Left" Width="180">
@@ -17,13 +17,87 @@
                 </LinearGradientBrush>
             </StackPanel.Background>
             <StackPanel Orientation="Horizontal">
-                <Image Source="nuageux (1).png" Width="45" Margin="5,0,-1,0"/>
-                <Label Foreground="White" Content="WEATHER" FontSize="25" VerticalAlignment="Center" FontWeight="Bold" Margin="5"></Label>
+                <Image Source="iconWeather.png" Width="45" Margin="5,0,-1,0"/>
+                <Label Foreground="White" Content="WEATHER" FontSize="25" VerticalAlignment="Center" FontWeight="Bold" Margin="5,5,5,5"></Label>
 
             </StackPanel>
             <Label Foreground="White" Content="Enter a city" FontSize="16" VerticalAlignment="Center" Margin="0,5" HorizontalAlignment="Center"></Label>
             <TextBox Margin="5" Height="25" Name="cityTxt"/>
             <Button Margin="5" Height="25" Name="btnSearch" Click="btnSearch_Click">SEARCH</Button>
+            <Separator Height="20" Margin="0"/>
+            <Button Margin="5" Height="25" Name="btnInfos" Click="btnInfos_Click">INFOS</Button>
+            <Label Foreground="White" Content="Software version 1.0.0" FontSize="12" VerticalAlignment="Center" Margin="0,5" HorizontalAlignment="Left"></Label>
+
         </StackPanel>
+
+        <Canvas>
+            <!-- Img header-->
+            <Image x:Name="headerImg" Height="250" VerticalAlignment="Top" Width="620" Source="/rain.jpg" Stretch="UniformToFill" />
+            <!-- Nom de la ville-->
+            <Label Name="cityTitle" Content="Paris" Foreground="White" FontSize="50" FontWeight="Bold" FontFamily="Arial" Canvas.Left="463" Canvas.Top="42" HorizontalAlignment="Left" VerticalAlignment="Center" Width="135">
+                <Label.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="Black"/>
+                </Label.Effect>
+            </Label>
+            <!-- Temperature de la ville-->
+            <Label Content="+ 15°C" Foreground="White" FontSize="60" FontWeight="Bold" FontFamily="Arial" Canvas.Left="44" Canvas.Top="70" HorizontalAlignment="Left" VerticalAlignment="Top" Width="223">
+                <Label.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="Black"/>
+                </Label.Effect>
+            </Label>
+            <!-- Date-->
+            <Label Name="dateTxt" Content="Vendredi 1er septembre" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="Arial" Canvas.Left="358" Canvas.Top="201" HorizontalAlignment="Left" VerticalAlignment="Center" Width="240">
+                <Label.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="Black"/>
+                </Label.Effect>
+            </Label>
+            <!-- Desc-->
+            <Label Name="weatherDesc" Content="Nuageux" Foreground="White" FontSize="14" FontWeight="Bold" FontFamily="Arial" Canvas.Left="524" Canvas.Top="114" HorizontalAlignment="Left" VerticalAlignment="Center" Width="74">
+                <Label.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="Black"/>
+                </Label.Effect>
+            </Label>
+            <!-- Vent -->
+            <Label Content="25 km/h" Foreground="White" FontSize="25" FontWeight="Bold" FontFamily="Arial" Canvas.Left="44" Canvas.Top="154" HorizontalAlignment="Left" VerticalAlignment="Top" Width="225">
+                <Label.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="Black"/>
+                </Label.Effect>
+            </Label>
+        </Canvas>
+
+        <DockPanel DockPanel.Dock="Bottom" Height="160">
+            <!-- Scrollbar -->
+            <ScrollViewer>
+                <StackPanel Width="215">
+                    <Label Content="NEWS" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <Label Content="Exemple d'actu sur la ville xxxx"/>
+                    <Label Content="Exemple d'actu sur la ville xxxx"/>
+                    <Label Content="Exemple d'actu sur la ville xxxx"/>
+                    <Label Content="Exemple d'actu sur la ville xxxx"/>
+                    <Label Content="Exemple d'actu sur la ville xxxx"/>
+                    <Label Content="Exemple d'actu sur la ville xxxx"/>
+                    <Label Content="Exemple d'actu sur la ville xxxx"/>
+                    <Label Content="Exemple d'actu sur la ville xxxx"/>
+                </StackPanel>
+            </ScrollViewer>
+            <StackPanel Width="125">
+                <Label Name="forecast1" Content="Mon" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold"/>
+                <Image Source="ico/cloud.png" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Content="+12°C" HorizontalAlignment="Center" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Width="125">
+                <Label Name="forecast2" Content="Tue" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold"/>
+                <Image Source="ico/sun.png" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Content="+16°C" HorizontalAlignment="Center" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Width="125">
+                <Label Name="forecast3" Content="Wed" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold"/>
+                <Image Source="ico/rain.png" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Content="+18°C" HorizontalAlignment="Center" FontSize="20"/>
+            </StackPanel>
+
+
+        </DockPanel>
+
     </DockPanel>
 </Window>
