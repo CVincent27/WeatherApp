@@ -52,7 +52,7 @@
                 </Label.Effect>
             </Label>
             <!-- Desc-->
-            <Label Name="weatherDesc" Content="Nuageux" Foreground="White" FontSize="14" FontWeight="Bold" FontFamily="Arial" Canvas.Left="524" Canvas.Top="114" HorizontalAlignment="Left" VerticalAlignment="Center" Width="74">
+            <Label Name="weatherDesc" Content="Nuageux" Foreground="White" FontSize="14" FontWeight="Bold" FontFamily="Arial" Canvas.Left="422" Canvas.Top="136" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Height="50">
                 <Label.Effect>
                     <DropShadowEffect BlurRadius="10" Color="Black"/>
                 </Label.Effect>

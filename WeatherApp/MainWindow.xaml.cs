@@ -35,7 +35,6 @@ namespace WeatherApp
             SetHeaderImg();
             SetDay();
             GetApiResponse();
-            SetUiInfos();
 
 
 
@@ -53,14 +52,15 @@ namespace WeatherApp
                 // Encodage UTF8 de la rép
                 byte[] bytes = Encoding.UTF8.GetBytes(JsonString);
                 JsonString = Encoding.UTF8.GetString(bytes);
+                SetUiInfos();
             }
         }
 
         public void SetUiInfos()
         {
             JObject o = JObject.Parse(JsonString);
-            MessageBox.Show(JsonString);
-            
+            // MessageBox.Show(JsonString);
+            weatherDesc.Content = o["condition:text"];
         }
 
             // Fonction de base
@@ -103,7 +103,6 @@ namespace WeatherApp
             city = cityTxt.Text;
             cityTitle.Content = city;
             GetApiResponse();
-            SetUiInfos();
         }
 
         private void btnInfos_Click(object sender, RoutedEventArgs e)
